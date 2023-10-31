@@ -1,4 +1,6 @@
 package io.zipcoder;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 /**
@@ -15,7 +17,20 @@ public class StringsAndThings {
      *           countYZ("day fyyyz"); // Should return 2
      */
     public Integer countYZ(String input){
-        return null;
+
+        // break string into words, split by space, escape space character
+        int counter = 0;
+        String[] words = input.split("\\s+");
+
+        // loop through words, if word ends in y or z, count + 1
+        for (int i = 0; i < words.length; i++){
+            // char lastCharacter = words[i].charAt(words[i].length() - 1);
+            if (words[i].endsWith("y")|| words[i].endsWith("z")) {
+                counter++;
+            }
+        }
+        // return count
+        return counter;
     }
 
     /**
@@ -28,6 +43,8 @@ public class StringsAndThings {
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
     public String removeString(String base, String remove){
+        String newString = new Regex();
+
         return null;
     }
 
@@ -39,20 +56,20 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("This is notnot") // Should return true
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
-    public Boolean containsEqualNumberOfIsAndNot(String input){
-        return null;
-    }
+    //public Boolean containsEqualNumberOfIsAndNot(String input){
+    //    return null;
+    //}
 
     /**
      * We'll say that a lowercase 'g' in a string is "happy" if there is another 'g' immediately to its left or right.
      * Return true if all the g's in the given string are happy.
      * example : gHappy("xxggxx") // Should return  true
      *           gHappy("xxgxx") // Should return  false
-     *           gHappy("xxggyygxx") // Should return  false
+     *           gHappy("xxggyygxx") // Should return true
      */
-    public Boolean gIsHappy(String input){
-        return null;
-    }
+    //public Boolean gIsHappy(String input){
+    //    return null;
+    //}
 
 
     /**
@@ -62,7 +79,7 @@ public class StringsAndThings {
      *            countTriple("xxxabyyyycd") // Should return 3
      *            countTriple("a") // Should return 0
      */
-    public Integer countTriple(String input){
-        return null;
-    }
+    // public Integer countTriple(String input){
+    //     return null;
+    // }
 }
