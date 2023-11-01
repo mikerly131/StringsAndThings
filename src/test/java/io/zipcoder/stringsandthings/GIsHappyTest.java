@@ -1,4 +1,3 @@
-/*
 
 package io.zipcoder.stringsandthings;
 
@@ -6,14 +5,14 @@ import io.zipcoder.StringsAndThings;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-*/
+
 
 
 /**
  * @author leon on 29/01/2019.
  */
 
-/*
+
 public class GIsHappyTest {
 
     private StringsAndThings stringsAndThings;
@@ -27,20 +26,22 @@ public class GIsHappyTest {
     @Test
     public void gIsHappyTest1(){
         Boolean actual = stringsAndThings.gIsHappy("xxggxx");
+        System.out.print(actual);
         Assert.assertTrue(actual);
     }
 
     @Test
     public void gIsHappyTest2(){
         Boolean actual = stringsAndThings.gIsHappy("xxgxx");
+        System.out.print(actual);
         Assert.assertFalse(actual);
     }
 
     @Test
     public void gIsHappyTest3(){
         Boolean actual = stringsAndThings.gIsHappy("xxggyygxx");
-        Assert.assertTrue(actual);
+        System.out.print(actual);
+        Assert.assertFalse(actual);
     }
 
 }
-*/

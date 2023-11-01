@@ -118,19 +118,54 @@ public class StringsAndThings {
 
         return (subStringCounter[0] == subStringCounter[1]);
     }
-    
+
 
     /**
      * We'll say that a lowercase 'g' in a string is "happy" if there is another 'g' immediately to its left or right.
      * Return true if all the g's in the given string are happy.
      * example : gHappy("xxggxx") // Should return  true
      *           gHappy("xxgxx") // Should return  false
-     *           gHappy("xxggyygxx") // Should return true
+     *           gHappy("xxggyygxx") // Should return false
      */
-    //public Boolean gIsHappy(String input){
-    //    return null;
-    //}
+    public Boolean gIsHappy(String input) {
 
+        // First off, anything with less than 2 gs will be false, so check that
+        int checkForOneG = 0;
+        Boolean touchingGs = false;
+        checkForOneG = (input.length() - input.replace("g", "").length());
+
+        if (checkForOneG > 1) {
+
+            // Now need to do something when there are 2 gs or more
+            // Make a string of its characters
+            String[] splitInput = input.split("");
+
+            // LOOP: Grab each character, left to right until all checked.
+            for (int i = 0; i < (input.length()-1); i++) {
+
+                // Get next 2 letters, starting/inclusive first letter
+                String testG1 = splitInput[i];
+                String testG2 = splitInput[i + 1];
+                // If there are 2 gs, we are true and can check next string letter after 2nd g
+                if (testG1.equals("g") && testG1.equals(testG2)) {
+                    System.out.println("Two gs");
+                    touchingGs = true;
+                    i++;
+                }
+                //If there is a g and it is not touching a g, we can return false
+                else if (testG1.equals("g") && !testG1.equals(testG2)){
+                    touchingGs = false;
+                }
+
+            }
+        } else {
+            //If 1 g or less, return false
+            touchingGs = false;
+            System.out.println(false);
+        }
+        return touchingGs;
+    }
+    
 
     /**
      * We'll say that a "triple" in a string is a char appearing three times in a row.
