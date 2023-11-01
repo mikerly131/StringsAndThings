@@ -1,18 +1,16 @@
-/*
-
 package io.zipcoder.stringsandthings;
 
 import io.zipcoder.StringsAndThings;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-*/
+
 
 /**
  * @author leon on 29/01/2019.
  */
 
-/*
+
 public class ContainsEqualNumberOfIsAndNotTest {
 
     private StringsAndThings stringsAndThings;
@@ -25,19 +23,21 @@ public class ContainsEqualNumberOfIsAndNotTest {
     @Test
     public void equalIsNotTest1(){
         Boolean actual = stringsAndThings.containsEqualNumberOfIsAndNot("This is not");
+        System.out.print(actual);
         Assert.assertFalse(actual);
     }
 
     @Test
     public void equalIsNotTest2(){
         Boolean actual = stringsAndThings.containsEqualNumberOfIsAndNot("This is notnot");
+        System.out.print(actual);
         Assert.assertTrue(actual);
     }
 
     @Test
     public void equalIsNotTest3(){
         Boolean actual = stringsAndThings.containsEqualNumberOfIsAndNot("noisxxnotyynotxisi");
+        System.out.print(actual);
         Assert.assertTrue(actual);
     }
 }
-*/
