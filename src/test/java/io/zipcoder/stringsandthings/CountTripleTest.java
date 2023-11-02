@@ -1,4 +1,3 @@
-/*
 package io.zipcoder.stringsandthings;
 import io.zipcoder.StringsAndThings;
 import org.junit.Assert;
@@ -37,4 +36,3 @@ public class CountTripleTest {
 
 
 }
-*/

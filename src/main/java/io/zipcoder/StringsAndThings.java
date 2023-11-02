@@ -134,21 +134,24 @@ public class StringsAndThings {
         Boolean touchingGs = false;
         checkForOneG = (input.length() - input.replace("g", "").length());
 
+        // If there are 2gs or more
         if (checkForOneG > 1) {
 
-            // Now need to do something when there are 2 gs or more
-            // Make a string of its characters
+            // Make a string array of its characters  (could char work?)
             String[] splitInput = input.split("");
 
-            // LOOP: Grab each character, left to right until all checked.
+            // LOOP: Grab ith character from array...
+            // ITERATE:  Add 1 to iterator
+            // CONDITION:  The iterator value is 1 less than length,
+            //      WHY:  string at i+1 is compared to i in the loop so don't need to go to i+1 at the end
             for (int i = 0; i < (input.length()-1); i++) {
 
-                // Get next 2 letters, starting/inclusive first letter
+                // Get ith and ith + 1 strings from array to compare them
                 String testG1 = splitInput[i];
                 String testG2 = splitInput[i + 1];
+
                 // If there are 2 gs, we are true and can check next string letter after 2nd g
                 if (testG1.equals("g") && testG1.equals(testG2)) {
-                    System.out.println("Two gs");
                     touchingGs = true;
                     i++;
                 }
@@ -165,7 +168,7 @@ public class StringsAndThings {
         }
         return touchingGs;
     }
-    
+
 
     /**
      * We'll say that a "triple" in a string is a char appearing three times in a row.
@@ -174,7 +177,23 @@ public class StringsAndThings {
      *            countTriple("xxxabyyyycd") // Should return 3
      *            countTriple("a") // Should return 0
      */
-    // public Integer countTriple(String input){
-    //     return null;
-    // }
+
+
+
+    public Integer countTriple(String input){
+
+        //
+        int tripleCounter = 0;
+
+        // LOOP:  Check each character in string
+        for (int i = 0; i < input.length() - 2; i++) {
+
+            // See if character in ith position is == to characters in ith +1 and ith +2
+            if (input.charAt(i) == input.charAt(i + 1) && input.charAt(i) == input.charAt(i + 2)) {
+                tripleCounter++;
+            }
+
+        }
+        return tripleCounter;
+    }
 }
